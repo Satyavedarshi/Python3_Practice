@@ -1,5 +1,5 @@
 import numpy
-from itertools import chain
+from itertools import zip_longest
 
 #Python program to add two Matrices
 def add_matrices_1(list1,list2):
@@ -54,6 +54,13 @@ def create_mat(dim):
         insert_elem = L[i][dim-1]
     return L
 
+def get_k_column(k,input_list):
+    return list(row[k-1] for row in input_list)
+
+#Python – Vertical Concatenation in Matrix
+def vert_concat(input_list):
+    return [''.join(item) for item in zip_longest(*input_list,fillvalue='nope')]
+
 print('Sum of two matrices is ', add_matrices_1([[1,2,3],[4 ,5,6],[7 ,8,9]],   [[9,8,7],[6,5,4],[3,2,1]]))
 
 print('Sum of two matrices is ', add_matrices_2([[1,2,3],[4 ,5,6],[7 ,8,9]],   [[9,8,7],[6,5,4],[3,2,1]]))
@@ -65,6 +72,11 @@ print(prod_matrix([[1,2,3,[4,4,5]],[4 ,5,6],[7 ,8,9]]))
 
 print(get_size_matrix([[1,2,3,],[4 ,5,6],[7 ,8,9]]))
 
-print(transpose_mat([[1,2,3,],[4 ,5,6],[7 ,8,9]]))
+print(transpose_mat([[1,2,3],[4 ,5,6],[7 ,8,9]]))
 
 print(create_mat(3))
+
+print('Kth column of the matrix is ', get_k_column(3,[[1,2,3],[4,5,6],[7 ,8,9]]))
+
+
+print('Column concatinated Matrix is ', vert_concat([['Gfg', 'good', 'geeks'], ['is', 'for', 'best']]))
