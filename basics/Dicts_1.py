@@ -35,6 +35,7 @@ def inser_orddict(test_dict):
     dict5.move_to_end('name3', last=False)
     print(dict5)
     dict5.move_to_end('name1')
+    print(dict5)
 
 dict1 = {'gfg': [5, 6, 7, 8], 'is': [10, 11, 7, 5], 'best': [6, 12, 10, 8], 'for': [1, 2, 5]}
 dict2 = lis = [{"name": "Nandini", "age": 20}, {"name": "Manjeet", "age": 20}, {"name": "Nikhil", "age": 19}]
